@@ -51,7 +51,7 @@ public class MainActivity extends Activity {
 		if (locationManager == null) {
 			Toast.makeText(this, "No hay GPS en el dispositivo", Toast.LENGTH_SHORT).show();
 		} else if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-			locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 10, 10, locationListener);
+			locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 10000, 10, locationListener);
 			Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 			muestraUbicacion(location);
 		} else {
